@@ -1,4 +1,4 @@
-# Mychat
+# elixir-chat --> Mychat
 
 To start your Phoenix server:
 
