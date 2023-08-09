@@ -1,0 +1,27 @@
+<p>
+    Currently chatting in <strong><%= @room_id %></strong> as <strong><%= @username %></strong>
+</p>
+<br/>
+<div id="container">
+    <div id="chat-container">
+        <div id="chat-messages" phx-update="prepend">
+            <%= for message <- @messages do %>
+                <%= display_message(message) %>
+            <% end %>
+        </div>
+        <%= unless is_nil(Enum.at(@is_writing, 0)) do %>
+            <p id="is-writing-msg"> <%= Enum.at(@is_writing, 0) %> is writing... </p>
+        <% else  %>
+            <p id="is-writing-msg"> &nbsp; </p>
+        <% end  %>
+        <%= Phoenix.HTML.Form.form_for :chat, "#", [id: "chat-form", phx_submit: :submit_message, phx_change: :form_update], fn f -> %>
+            <%= Phoenix.HTML.Form.text_input f, :message, value: @message, placeholder: "Enter your message..." %>
+        <% end %>
+    </div>
+    <div id="user-list">
+        <h2>Users online</h2>
+        <%= for user <- @user_list do %>
+            <p id={user}> <strong><%= user %></strong> </p>
+        <% end %>
+    </div>
+</div>

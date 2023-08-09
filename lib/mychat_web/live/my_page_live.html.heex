@@ -1,0 +1,7 @@
+<div id="topics">
+    <h3>Opened rooms: </h3>
+    <%= for topic <- @topics do %>
+        <a id={topic} phx-click="opened-room" phx-value-topic={topic} href="#"> <%= topic %> </a>
+    <% end %>
+</div>
+<button phx-click="random-room" title="Create a random room">Create a random room</button>

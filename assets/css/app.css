@@ -1,0 +1,76 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* This file is for your main application CSS */
+button {
+  @apply text-white bg-blue-700 hover:bg-blue-800 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800;
+}
+
+#container {
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+}
+
+#chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 85%;
+}
+
+#is-writing-msg {
+  padding: 1em;
+  margin: 0em -1em -1.5em -1.75em;
+  color: #757373;
+}
+
+#chat-messages {
+  display: flex;
+  height: 100%;
+  flex-direction: column-reverse;
+  border: 1px solid #cccccc;
+  padding: 1em;
+  margin: 0em 1em -1em -1em;
+  /* justify-content: space-between; */
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+#chat-messages,
+p {
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+#user-list {
+  margin-left: 1em;
+  width: 20%;
+}
+
+#chat-form {
+  margin-bottom: auto;
+}
+
+form {
+  margin: 1em 1em 1em -1em;
+}
+
+form,
+input {
+  width: 100%;
+}
+
+/**** Home */
+
+#topics {
+  display: flex;
+  flex-direction: column;
+  margin: -1em 1em 1em -1em;
+  /* justify-content: flex-start; */
+}
+
+/* #topics, p {
+
+} */
